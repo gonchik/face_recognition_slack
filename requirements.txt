@@ -1,0 +1,4 @@
+aiohttp
+requests
+opencv-python
+face_recognition
