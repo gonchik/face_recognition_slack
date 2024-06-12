@@ -19,9 +19,9 @@ def download_slack_avatars(token, download_path="avatars"):
 
     # Download each user's avatar
     for user in users:
-        if not user.get('is_bot', False):
+        if not user.get('is_bot', False) and user.get('deleted', False) is False:
             user_id = user['id']
-            # print(user)
+            print(user)
             email = user.get('profile', {}).get('email', 'unknown')
             display_name = user.get('profile', {}).get('display_name', user_id)
             avatar_url = user['profile']['image_512']  # You can choose different sizes like image_24, image_32, etc.

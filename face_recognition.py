@@ -24,11 +24,8 @@ def validate_avatars(directory_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Validate Slack avatars for human face presence.")
-    parser.add_argument('--avatar-dir', required=True, help='Path to the directory with avatar images')
+    parser.add_argument('--avatar-dir', required=True, help='Path to the directory with avatar images',
+                        default='avatars')
     args = parser.parse_args()
-    if args.avatar_dir:
-        avatars_path = args.avatar_dir
-    else:
-        # Replace with the path where your avatars are located
-        avatars_path = 'avatars'
+    avatars_path = args.avatar_dir
     validate_avatars(avatars_path)
